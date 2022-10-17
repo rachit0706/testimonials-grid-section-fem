@@ -51,11 +51,11 @@ main {
 
 .grid-container {
     margin: 1rem;
-    max-width: 50rem;
+    max-width: 58rem;
     min-height: 30rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 0.8fr;
     grid-template-areas: 
     "daniel daniel jonathan kira"
     "jeanette patrick patrick kira";
@@ -75,18 +75,35 @@ main {
     align-items: center;
 }
 
+p {
+    line-height: 1rem;
+}
+
 .item {
     border-radius: .5rem;
-    padding: 1.2rem;
+    padding: 1.5rem;
     gap: 1rem;
     justify-content: flex-start;
 }
 
- .daniel {
+.daniel {
     position: relative;
     background-color: var(--moderate-violet);
     color: var(--light-gray);
     grid-area: daniel;
+}
+
+.daniel > h2 {
+    z-index: 2;
+}
+
+.daniel::after {
+    content: url('./images/bg-pattern-quotation.svg');
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 2.5rem;
+    opacity: 0.7;
 }
 
 .jonathan {
@@ -111,6 +128,10 @@ main {
     background-color: var(--white);
     color: var(--very-dark-grayish-blue);
     grid-area: kira;
+}
+
+.ver-grad {
+    opacity: 0.5;
 }
 
 
