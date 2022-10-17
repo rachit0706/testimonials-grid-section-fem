@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap');
+
+:root {
+    --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+    --fw-1: 500;
+    --fw-2: 600;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    font-size: 13px;
+    background-color: var(--light-grayish-blue);
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+main {
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.fw-1 {
+    font-weight: var(--fw-1);
+}
+
+.fw-2 {
+    font-weight: var(--fw-2);
+}
+
+.grid-container {
+    margin: 1rem;
+    max-width: 50rem;
+    min-height: 30rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "daniel daniel jonathan kira"
+    "jeanette patrick patrick kira";
+    gap: 1rem;
+}
+
+.avatar {
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 50%;
+    border: 2px solid gray;
+    object-fit: contain;
+}
+
+.card-author {
+    gap: .8rem;
+    align-items: center;
+}
+
+.item {
+    border-radius: .5rem;
+    padding: 1.2rem;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+ .daniel {
+    position: relative;
+    background-color: var(--moderate-violet);
+    color: var(--light-gray);
+    grid-area: daniel;
+}
+
+.jonathan {
+    background-color: var(--very-dark-grayish-blue);
+    color: var(--light-gray);
+    grid-area: jonathan;
+}
+
+.jeanette {
+    background-color: var(--white);
+    border-color: var(--white);
+    grid-area: jeanette;
+}
+
+.patrick {
+    background-color: var(--very-dark-blackish-blue);
+    color: var(--light-gray);
+    grid-area: patrick;
+}
+
+.kira {
+    background-color: var(--white);
+    color: var(--very-dark-grayish-blue);
+    grid-area: kira;
+}
+
+
+.attribution {
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: 
+        "daniel"
+        "jonathan"
+        "jeanette"
+        "patrick"
+        "kira";
+    }
+}
