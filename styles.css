@@ -55,7 +55,7 @@ main {
     min-height: 30rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 0.8fr;
+    grid-template-rows: auto auto;
     grid-template-areas: 
     "daniel daniel jonathan kira"
     "jeanette patrick patrick kira";
@@ -84,6 +84,11 @@ p {
     padding: 1.5rem;
     gap: 1rem;
     justify-content: flex-start;
+    transition: all 0.5s;
+}
+
+.item:hover {
+    transform: scale(1.03);
 }
 
 .daniel {
@@ -130,11 +135,23 @@ p {
     opacity: 0.5;
 }
 
-.test-head {
-    font-size: 16px;
+.daniel > blockquote {
     z-index: 2;
 }
 
+.test-head {
+    font-size: 15px;
+    margin-bottom: 1rem;
+}
+
+.daniel .test-head {
+    color: white
+}
+
+figcaption > h2 {
+    font-size: 16px;
+    font-weight: 1000;
+}
 
 .attribution {
     font-size: 16px;
